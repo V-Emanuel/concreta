@@ -14,11 +14,11 @@ class CidadesSeeder extends Seeder
     public function run(): void
     {
         $cidades = [
-            ['cidade' => 'Antônio Gonçalves'],
-            ['cidade' => 'Campo Formoso'],
-            ['cidade' => 'Jacobina'],
-            ['cidade' => 'Pindobaçu'],
-            ['cidade' => 'Senhor do Bonfim'],
+            ['nome' => 'Antônio Gonçalves'],
+            ['nome' => 'Campo Formoso'],
+            ['nome' => 'Jacobina'],
+            ['nome' => 'Pindobaçu'],
+            ['nome' => 'Senhor do Bonfim'],
         ];
 
         DB::table('cidades')->insert($cidades);

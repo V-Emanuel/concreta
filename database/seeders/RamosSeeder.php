@@ -14,13 +14,13 @@ class RamosSeeder extends Seeder
     public function run(): void
     {
         $ramos = [
-            ['ramo' => 'Ambiental'],
-            ['ramo' => 'Civil'],
-            ['ramo' => 'Constitucional'],
-            ['ramo' => 'Consumidor'],
-            ['ramo' => 'Empresarial'],
-            ['ramo' => 'Previdenciário'],
-            ['ramo' => 'Tributário'],
+            ['nome' => 'Ambiental'],
+            ['nome' => 'Civil'],
+            ['nome' => 'Constitucional'],
+            ['nome' => 'Consumidor'],
+            ['nome' => 'Empresarial'],
+            ['nome' => 'Previdenciário'],
+            ['nome' => 'Tributário'],
         ];
 
         DB::table('ramos')->insert($ramos);

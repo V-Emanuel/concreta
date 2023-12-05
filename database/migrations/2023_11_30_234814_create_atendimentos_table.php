@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreign('cidadeId')->references('id')->on('cidades');
             $table->unsignedBigInteger('ramoId');
             $table->foreign('ramoId')->references('id')->on('ramos');
-            $table->integer('celular');
+            $table->string('celular');
             $table->string('texto');
             $table->timestamps();
         });
