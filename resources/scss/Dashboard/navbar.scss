@@ -1,0 +1,29 @@
+.nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    padding: 8px 20px 8px 200px;
+    background: #232323;
+    box-shadow: inset;
+    color: #fff;
+    position: fixed;
+    top: 0px;
+    .justice-svg {
+        position: absolute;
+        display: flex;
+        top: 10px;
+        left: 20px;
+        .dashboard-link {
+            color: #fff;
+            margin-left: 20px;
+        }
+    }
+    .dashboard-user {
+        position: absolute;
+        display: flex;
+        top: 8px;
+        right: 10px;
+    }
+}

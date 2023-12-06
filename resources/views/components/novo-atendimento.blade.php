@@ -30,14 +30,12 @@
         $('#celular').inputmask('(99) 99999-9999', { placeholder: ' ' });
 
         $('#btnCadastrar').click(function () {
-            // Simula o envio do formulário usando Ajax
             $.ajax({
                 type: 'POST',
                 url: '{{ route("atendimento.post") }}',
-                data: $('#cadastroForm').serialize(), // Serializa os dados do formulário
+                data: $('#cadastroForm').serialize(),
                 success: function () {
                     alert('Cadastro realizado com sucesso!');
-                    // Limpa os campos ou faça outras ações se necessário
                     $('#cadastroForm')[0].reset();
                 },
                 error: function () {
