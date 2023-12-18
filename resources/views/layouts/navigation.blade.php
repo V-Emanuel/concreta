@@ -5,6 +5,11 @@
         </div>
         <ul>
             <x-header.colaboradores/>
+           <li>Clientes</li>
+           <li>Atividades</li>
+           <li>Documentos</li>
+           <a href="{{ route('appointments') }}">Atendimentos</a>
+
         </ul>
         <div class="dashboard-user">
         <x-header.user/>

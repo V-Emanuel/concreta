@@ -1,5 +1,32 @@
 .create-atendimento-component{
+    width: 75%;
     display: flex;
-    color: black;
     flex-direction: column;
+    label{
+        font-size: 16px;
+        font-family: "Montserrat-ExtraLight";
+        margin-top: 10px;
+    }
+    input, select{
+        border: none;
+        border-radius: 5px;
+        color: #000;
+        font-size: 14px;
+        font-family: "Montserrat-ExtraLight";
+        background-color: #e3e3e3;
+        &:placeholder-shown{
+            color: #a3a3a3;
+        }
+    }
+    input:focus{
+        border: 1px solid;
+        border-color: red;
+        transition: border-color 0.3s ease-out;
+    }
+    .texto-atendimento{
+        height: 170px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
 }

@@ -4,13 +4,6 @@
 @import "Dashboard/welcome";
 @import "Dashboard/dashboard";
 @import "Dashboard/navbar";
+@import "Dashboard/appointments"; 
 @import "Components/create-atendimento";
 @import 'fonts';
-
-.app-content {
-    min-width: 100vw;
-    min-height: 100vh;
-    background: #d3d3d3;
-    box-sizing: border-box;
-    padding-top: 50px;
-}

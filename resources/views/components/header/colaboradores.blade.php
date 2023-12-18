@@ -15,6 +15,7 @@
             </button>
         </x-slot>
 
+
         <x-slot name="content">
             @foreach ($colaboradores as $colaborador)
             <x-dropdown-link :href="route('profile.edit')">

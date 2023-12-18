@@ -26,4 +26,12 @@
         top: 8px;
         right: 10px;
     }
+
+    ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        box-sizing: border-box;
+        padding-right: 80px;
+    }
 }
