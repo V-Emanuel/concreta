@@ -17,7 +17,7 @@
     <label>Celular:</label>
     <input type="text" id="celular" name="celular" placeholder="(99) 99999-9999">
     <label>Registro do Atendimento:<span style="color: red"> *</span></label>
-    <input name="texto" placeholder="Texto" required type="text" class="texto-atendimento">
+    <input name="texto" placeholder="Texto" required type="text" class="texto-atendimento" maxlength="200">
     <button type="button" id="btnCadastrar">
         <p>CADASTRAR</p>
     </button>
