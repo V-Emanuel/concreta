@@ -1,6 +1,7 @@
 <ul id="searchResults">
     @foreach ($atendimentos as $atendimento)
-    <li class="searchable-li" id="moreContent{{ $loop->index }}">
+    <li class="searchable-li" id="moreContent{{ $loop->index }}" data-cidade="{{ $atendimento->cidadeId }}"
+        data-ramo="{{ $atendimento->ramoId }}" data-data="{{ $atendimento->created_at }}">
         <h1 class="searchable-content">{{ $atendimento->nome }}</h1>
         @foreach($cidades as $cidade)
         @if($cidade->id === $atendimento->cidadeId)
