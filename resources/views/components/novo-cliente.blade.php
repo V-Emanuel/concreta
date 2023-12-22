@@ -31,27 +31,27 @@
     <div class="cliente-endereco-container">
         <div class="endereco-section primeiro">
             <h6>CEP:<span style="color: red"> *</span></h6>
-            <input placeholder="CEP" name="cep" required type="text">
+            <input id="cep" placeholder="CEP" name="cep" required type="text">
         </div>
         <div class="endereco-section segundo">
             <h6>Rua:<span style="color: red"> *</span></h6>
-            <input placeholder="Rua" name="rua" required type="text">
+            <input id="logradouro" placeholder="Rua" name="rua" required type="text">
         </div>
         <div class="endereco-section terceiro">
             <h6>Bairro:<span style="color: red"> *</span></h6>
-            <input name="bairro" required type="text">
+            <input id="bairro" name="bairro" required type="text">
         </div>
         <div class="endereco-section quarto">
             <h6>Número:<span style="color: red"> *</span></h6>
-            <input name="numero" required type="text">
+            <input id="numero" name="numero" required type="text">
         </div>
         <div class="endereco-section quinto">
             <h6>Estado:<span style="color: red"> *</span></h6>
-            <input name="estado" required type="text">
+            <input id="estado" name="estado" required type="text">
         </div>
         <div class="endereco-section sexto">
             <h6>Cidade:<span style="color: red"> *</span></h6>
-            <input name="cidade" required type="text">
+            <input id="cidade" name="cidade" required type="text">
         </div>
 
     </div>
@@ -133,14 +133,30 @@
         var select = document.getElementById('naturalidade');
         var campoOutro = document.getElementById('campoOutro');
 
-        // Oculta o campo de texto se a opção for "brasileiro" ou "brasileira"
         if (select.value === 'brasileiro' || select.value === 'brasileira') {
             campoOutro.style.display = 'none';
-            document.getElementById('outro').value = ''; // Limpa o valor do campo "outro"
+            document.getElementById('outro').value = '';
         } else {
             campoOutro.style.display = 'block';
         }
     }
-
     atualizarEstadoCivil();
+
+    $("#cep").focusout(function () {
+        $.ajax({
+
+            url: 'https://viacep.com.br/ws/' + $(this).val() + '/json/',
+            dataType: 'json',
+            success: function (resposta) {
+
+                $("#logradouro").val(resposta.logradouro);
+                $("#numero").val(resposta.complemento);
+                $("#bairro").val(resposta.bairro);
+                $("#cidade").val(resposta.localidade);
+                $("#estado").val(resposta.uf);
+
+                $("#numero").focus();
+            }
+        });
+    });
 </script>
