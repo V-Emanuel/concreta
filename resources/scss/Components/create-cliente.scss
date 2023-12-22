@@ -1,0 +1,88 @@
+.create-cliente-component {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow-y: auto;
+    label {
+        width: 80%;
+        font-size: 14px;
+        font-family: "Montserrat-ExtraLight";
+        margin-top: 10px;
+    }
+
+    .label-endereco{
+        font-family: "Montserrat-Bold";
+        font-size: 16px;
+    }
+
+    input,
+    select {
+        width: 80%;
+        border: none;
+        border-radius: 5px;
+        color: #000;
+        font-size: 14px;
+        font-family: "Montserrat-ExtraLight";
+        background-color: #e3e3e3;
+        &:placeholder-shown {
+            color: #a3a3a3;
+        }
+    }
+    select {
+        option {
+            padding: 5px 5px 5px 5px;
+        }
+    }
+
+    input:focus {
+        border: 1px solid;
+        border-color: red;
+        transition: border-color 0.3s ease-out;
+    }
+}
+
+.create-cliente-component::-webkit-scrollbar {
+    width: 10px;
+}
+
+.cliente-endereco-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .endereco-section {
+        display: flex;
+        flex-direction: column;
+        h6 {
+            font-size: 14px;
+            font-family: "Montserrat-ExtraLight";
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+        }
+    }
+
+    .primeiro {
+        width: 30%;
+    }
+    .segundo {
+        width: 65%;
+    }
+    .terceiro {
+        width: 72%;
+    }
+    .quarto {
+        width: 22%;
+    }
+    .quinto {
+        width: 45%;
+    }
+    .sexto {
+        width: 45%;
+    }
+}

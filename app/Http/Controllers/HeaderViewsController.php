@@ -18,7 +18,7 @@ class HeaderViewsController extends Controller
         $cidades = Cidade::all();
         $ramos = Ramo::all();
 
-        return view("appointments", compact("atendimentos", "cidades","ramos"));
+        return view("appointments", compact("atendimentos", "cidades", "ramos"));
     }
 
     public function clientsView()
@@ -27,24 +27,6 @@ class HeaderViewsController extends Controller
         $cidades = Cidade::all();
         $ramos = Ramo::all();
 
-        $estados = [];
-        $municipios = [];
-
-        $urlEstados = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
-        $urlMunicipios = "https://servicodados.ibge.gov.br/api/v1/localidades/municipios";
-
-        $client = new Client();
-
-        try{
-
-            $estados = $client->request("GET", $urlEstados);
-            $municipios = $client->request("GET", $urlMunicipios);
-
-            return view("clients", compact("clientes", "cidades","ramos", "municipios", "estados"));
-
-        }catch(\Exception $e){
-            return view("clients", compact("clientes", "cidades","ramos", "municipios", "estados"));
-        }
-
+        return view("clients", compact("clientes", "cidades", "ramos"));
     }
 }
