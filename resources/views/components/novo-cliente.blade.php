@@ -1,4 +1,4 @@
-<form class="create-cliente-component" id="cadastroForm" method="POST">
+<form class="create-cliente-component" id="cadastroForm" method="POST" action="{{ route('cliente.post') }}">
     @csrf
     <label>Nome:<span style="color: red"> *</span></label>
     <input placeholder="Nome" name="nome" required type="text">
@@ -22,11 +22,17 @@
     <label>Nome do Pai: </label>
     <input placeholder="Pai" name="nome_pai" required type="text">
     <label>RG:<span style="color: red"> *</span></label>
-    <input placeholder="RG" name="rg" required type="text">
+    <input placeholder="99.999.999-99" id="rg" name="rg" required type="text">
     <label>CPF:<span style="color: red"> *</span></label>
-    <input placeholder="CPF" name="cpf" required type="text">
+    <input placeholder="999.999.999-99" id="cpf" name="cpf" required type="text">
     <label>Celular:</label>
     <input type="text" id="celular" name="celular" placeholder="(99) 99999-9999">
+    <label>Cidade de Nascimento:<span style="color: red"> *</span></label>
+    <input placeholder="Cidade" name="cidade_nascimento" required type="text">
+    <label>Estado de Nascimento:<span style="color: red"> *</span></label>
+    <input placeholder="Estado" name="estado_nascimento" required type="text">
+    <label>Data de Nascimento:<span style="color: red"> *</span></label>
+    <input placeholder="99/99/9999" id="nascimento" name="nascimento" required type="text">
     <label class="label-endereco">Endereço:<span style="color: red"> *</span></label>
     <div class="cliente-endereco-container">
         <div class="endereco-section primeiro">
@@ -56,8 +62,10 @@
 
     </div>
 
-    <p>CADASTRAR</p>
+    <button type="submit" id="btnCadastrarCliente" onclick="exibirDados()">
+        <p>CADASTRAR</p>
     </button>
+
 </form>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -65,21 +73,9 @@
 <script>
     $(document).ready(function () {
         $('#celular').inputmask('(99) 99999-9999', { placeholder: ' ' });
-
-        $('#btnCadastrar').click(function () {
-            $.ajax({
-                type: 'POST',
-                url: '{{ route("cliente.post") }}',
-                data: $('#cadastroForm').serialize(),
-                success: function () {
-                    alert('Cadastro de cliente realizado com sucesso!');
-                    $('#cadastroForm')[0].reset();
-                },
-                error: function () {
-                    alert('Ocorreu um erro durante o cadastro do cliente.');
-                }
-            });
-        });
+        $('#rg').inputmask('99.999.999-99', { placeholder: ' ' });
+        $('#cpf').inputmask('999.999.999-99', { placeholder: ' ' });
+        $('#nascimento').inputmask('99/99/9999', { placeholder: ' ' });
 
     });
 
@@ -139,7 +135,7 @@
         } else {
             campoOutro.style.display = 'block';
         }
-    }
+    } 
     atualizarEstadoCivil();
 
     $("#cep").focusout(function () {
@@ -154,9 +150,11 @@
                 $("#bairro").val(resposta.bairro);
                 $("#cidade").val(resposta.localidade);
                 $("#estado").val(resposta.uf);
-
+                $("#cep").val(resposta.cep);
                 $("#numero").focus();
             }
         });
+
     });
+
 </script>

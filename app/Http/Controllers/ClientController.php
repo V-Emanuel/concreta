@@ -10,31 +10,45 @@ class ClientController extends Controller
     public function create(Request $request)
     {
 
-        $validatedData = $request->validate([
-            'nome' => 'required|string|max:255',
-            'naturalidade' => 'required|string|max:255',
-            'estado_civil' => 'required|string|max:255',
-            'profissao' => 'required|string|max:255',
-            'nome_mae' => 'required|string|max:255',
-            'nome_pai' => 'required|string|max:255',
-            'rg' => 'required|string|max:255',
-            'cpf' => 'required|string|max:14|unique:clientes,cpf',
-            'nascimento' => 'required|date',
-            'cidade_nascimento' => 'required|string|max:255',
-            'endereco' => 'required|array',
-            'endereco.rua' => 'required|string|max:255',
-            'endereco.numero' => 'required|string|max:255',
-            'endereco.bairro' => 'required|string|max:255',
-            'endereco.municipio' => 'required|string|max:255',
-            'endereco.estado' => 'required|string|max:255',
-            'endereco.cep' => 'required|string|max:10',
-            'documentos' => 'required|array',
-            'documentos.*.nome' => 'required|string|max:255',
-            'documentos.*.tipo_documento' => 'required|string|max:255',
-            'documentos.*.descricao' => 'required|string|max:255',
-            'documentos.*.link' => 'required|string|max:255',
-            'documentos.*.size' => 'required|integer',
+        $data = $request->all();
+
+        foreach ($data as $chave => $valor) {
+            if ($chave === 'naturalidade') {
+                if ($valor === 'outro' || $valor === '' || $valor === null) {
+                    unset($data[$chave]);
+                }
+            }
+        }
+
+        $endereco = [
+            'cep'=> $data['cep'] ?? 'joge',
+            'rua'=> $data['rua'],
+            'bairro'=> $data['bairro'] ?? 'joge',
+            'numero'=> $data['numero'] ?? 'joge',
+            'cidade'=> $data['cidade'] ?? 'joge',
+            'estado'=> $data['estado'] ?? 'joge' ,
+        ];
+
+        $cliente = new Cliente([
+            'nome' => $data['nome'],
+            'celular' => $data['celular'],
+            'naturalidade' => $data['naturalidade'] ?? 'joge',
+            'estado_civil' => $data['estado_civil'],
+            'profissao' => $data['profissao'],
+            'nome_mae' => $data['nome_mae'],
+            'nome_pai' => $data['nome_pai'],
+            'rg' => $data['rg'],
+            'cpf' => $data['cpf'],
+            'nascimento' => $data['nascimento'],
+            'cidade_nascimento' => $data['cidade_nascimento'],
+            'estado_nascimento' => $data['estado_nascimento'],
+            'endereco' =>  $endereco,
+            'documentos' => [], // Inicializa com array vazio
         ]);
-        Cliente::create($validatedData);
+
+        // Salve o cliente no banco de dados
+        $cliente->save();
+
+        return redirect()->route('clients')->with('success', 'Cliente cadastrado com sucesso!');
     }
 }

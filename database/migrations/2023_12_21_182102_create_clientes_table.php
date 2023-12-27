@@ -23,6 +23,7 @@ return new class extends Migration {
             $table->string('cpf');
             $table->string('nascimento');
             $table->string('cidade_nascimento');
+            $table->string('estado_nascimento');
             $table->json('endereco');
             $table->json('documentos');
 

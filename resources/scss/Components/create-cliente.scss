@@ -6,6 +6,7 @@
     justify-content: flex-start;
     flex-direction: column;
     overflow-y: auto;
+    position: relative;
     label {
         width: 80%;
         font-size: 14px;
@@ -41,6 +42,13 @@
         border: 1px solid;
         border-color: red;
         transition: border-color 0.3s ease-out;
+    }
+
+    button{
+        width: max-content;
+        height: 30px;
+        background-color: aquamarine;
+        margin-top: 20px;
     }
 }
 
