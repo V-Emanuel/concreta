@@ -43,10 +43,9 @@ class ClientController extends Controller
             'cidade_nascimento' => $data['cidade_nascimento'],
             'estado_nascimento' => $data['estado_nascimento'],
             'endereco' =>  $endereco,
-            'documentos' => [], // Inicializa com array vazio
+            'documentos' => [], 
         ]);
 
-        // Salve o cliente no banco de dados
         $cliente->save();
 
         return redirect()->route('clients')->with('success', 'Cliente cadastrado com sucesso!');

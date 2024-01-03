@@ -1,19 +1,14 @@
 <nav x-data="{ open: false }" class="nav-header">
     <!-- Primary Navigation Menu -->
-        <div class="justice-svg">
-        <x-application-logo/>
-        </div>
-        <ul>
-            <x-header.colaboradores/>
-           <li>Atividades</li>
-           <li>Documentos</li>
-           <a href="{{ route('clients') }}">Clientes</a>
-           <a href="{{ route('appointments') }}">Atendimentos</a>
-
-        </ul>
-        <div class="dashboard-user">
-        <x-header.user/>
-        </div>
+    <div class="justice-svg">
+        <x-application-logo />
+    </div>
+    <x-header.colaboradores />
+    <a class="header-options" href="{{ route('clients') }}">Clientes</a>
+    <a class="header-options" href="{{ route('appointments') }}">Atendimentos</a>
+    <div class="dashboard-user">
+        <x-header.user />
+    </div>
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">

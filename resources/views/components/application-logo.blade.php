@@ -1,4 +1,4 @@
 <a href="{{ route('dashboard') }}">
-<x-justice-svg/>
+<img class="logo.header" src="{{ asset('assets/imgs/vg_logo.png') }}" alt="Dr. Vinicius Guimarães">
 </a>
  

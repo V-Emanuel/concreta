@@ -3,7 +3,8 @@
     height: 100vh;
     background-color: #e3e3e3;
     display: flex;
-    padding-top: 50px;
+    flex-direction: column;
+    padding-top: 46px;
 
     .clients-header {
         width: 100%;
@@ -49,4 +50,37 @@
     position: fixed;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.all-clients {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 40px;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.client-container {
+    width: 90%;
+    height: 120px;
+    background-color: burlywood;
+    box-sizing: border-box;
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.client-info {
+    width: 90%;
+    margin-bottom: 40px;
+}
+
+.arrow-icon {
+    width: 35px;
+    height: 35px;
 }

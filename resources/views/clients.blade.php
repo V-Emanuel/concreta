@@ -4,12 +4,35 @@
             <p>clientes</p>
             <x-jam-plus-rectangle-f class="add-client-icon" />
         </header>
-        <div class="clients-right">
+        <div style="display: none;" class="clients-right">
             <x-bi-arrow-right-square-fill class="close-client-icon" />
             <p class='form-title'>Registrar Cliente</p>
-            <x-novo-cliente/>
+            <x-novo-cliente />
         </div>
-        <div class="client-opacity-bg"></div>
+        <div style="display: none;" class="client-opacity-bg"></div>
+        <div class="all-clients">
+            @foreach($clientes as $cliente)
+            <div class="client-container">
+                <p>{{$cliente->nome}}</p>
+                <x-tabler-arrow-big-down-lines-filled class="arrow-icon"/>
+            </div>
+            <div class="client-info">
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>
+            @endforeach
+        </div>
     </div>
 </x-app-layout>
 
