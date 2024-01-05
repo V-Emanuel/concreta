@@ -34,6 +34,7 @@
     right: 0px;
     background-color: #fff;
     z-index: 2;
+    transition: 1s;
 }
 
 .close-client-icon {
@@ -50,6 +51,7 @@
     position: fixed;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.5);
+    transition: 1s;
 }
 
 .all-clients {

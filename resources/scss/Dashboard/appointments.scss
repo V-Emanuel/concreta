@@ -28,16 +28,26 @@
         padding-right: 80px;
         color: #9aa8b7;
         p {
-            font-family: "Metropolis-Bold";
-            font-size: 30px;
+            font-family: "Metropolis-Black";
+            font-size: 32px;
         }
         .add-register-icon {
-            width: 40px;
+            width: 46px;
             position: absolute;
             right: 10px;
             &:hover {
+                transition: 300ms;
+                color: #fff;
                 cursor: pointer;
             }
+            &:not(:hover) {
+                transition: 300ms;
+            }
+        }
+        input {
+            background-color: #9aa8b7;
+            border-radius: 7px;
+            color: #101204;
         }
     }
     ul {
@@ -129,12 +139,13 @@
     align-items: center;
     position: fixed;
     right: 0px;
-    background-color: #fff;
+    background: linear-gradient(180deg, #5c7ada, #031636);
     z-index: 2;
+    transition: 1s;
     .form-title {
         margin-bottom: 30px;
         font-family: "Metropolis-Black";
-        color: #737373;
+        color: #fff;
         font-size: 40px;
     }
     .close-register-icon {
@@ -143,7 +154,38 @@
         position: absolute;
         top: 20px;
         left: 20px;
+        color: #fff;
+        border-radius: 5px;
+        &:hover {
+            transition: 300ms;
+            color: #101204;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        &:not(:hover) {
+            transition: 300ms;
+        }
     }
+}
+
+.active-x {
+    transform: translateX(0);
+}
+
+.active-opacity {
+    transform: scale(1);
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.no-active-x {
+    transform: translateX(100%);
+}
+
+.no-active-opacity {
+    transform: scale(0);
+    opacity: 0;
+    transition: opacity 1s ease-out;
 }
 
 .opacity-bg {
@@ -201,11 +243,13 @@
     }
 }
 
-.date-filter-container{
+.date-filter-container {
     display: flex;
     flex-direction: column;
     width: 80%;
-    label{
+    input {
         border-radius: 5px;
+        background-color: #9aa8b7;
+        color: #101204;
     }
 }

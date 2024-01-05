@@ -8,12 +8,12 @@
             </div>
             <x-atendimentos />
         </div>
-        <div style="display: none;" class="appointments-right">
+        <div class="appointments-right no-active-x">
             <x-bi-arrow-right-square-fill class="close-register-icon" />
             <p class='form-title'>Registrar Atendimento</p>
             <x-novo-atendimento />
         </div>
-        <div style="display: none;" class="opacity-bg"></div>
+        <div class="no-active-opacity opacity-bg"></div>
         <div class="filter-column">
             <p>Filtrar Registros</p>
 
@@ -70,29 +70,29 @@
             });
 
             document.addEventListener('DOMContentLoaded', function () {
-
                 document.querySelectorAll('.add-register-icon').forEach(function (icon) {
                     icon.addEventListener('click', function () {
-
                         let appointmentsRight = document.querySelector('.appointments-right');
                         let opacityBg = document.querySelector('.opacity-bg');
 
-                        appointmentsRight.style.display = 'flex';
-                        opacityBg.style.display = 'flex';
+                        appointmentsRight.classList.toggle('active-x');
+                        appointmentsRight.classList.toggle('no-active-x');
+                        opacityBg.classList.toggle('active-opacity');
+                        opacityBg.classList.toggle('no-active-opacity');
+
                     });
                 });
-            });
-
-            document.addEventListener('DOMContentLoaded', function () {
 
                 document.querySelectorAll('.close-register-icon').forEach(function (icon) {
                     icon.addEventListener('click', function () {
-
                         let appointmentsRight = document.querySelector('.appointments-right');
                         let opacityBg = document.querySelector('.opacity-bg');
 
-                        appointmentsRight.style.display = 'none';
-                        opacityBg.style.display = 'none';
+                        appointmentsRight.classList.toggle('active-x');
+                        appointmentsRight.classList.toggle('no-active-x');
+                        opacityBg.classList.toggle('active-opacity');
+                        opacityBg.classList.toggle('no-active-opacity');
+
                     });
                 });
             });

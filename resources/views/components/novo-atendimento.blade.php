@@ -17,10 +17,12 @@
     <label>Celular:</label>
     <input type="text" id="celular" name="celular" placeholder="(99) 99999-9999">
     <label>Registro do Atendimento:<span style="color: red"> *</span></label>
-    <input name="texto" placeholder="Texto" required type="text" class="texto-atendimento" maxlength="200">
+    <input id="texto-atendimento" name="texto" placeholder="Texto" required type="text" maxlength="200">
+    <div class="button-container">
     <button type="button" id="btnCadastrar">
-        <p>CADASTRAR</p>
+        <p>REGISTRAR</p>
     </button>
+    </div>
 </form>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
