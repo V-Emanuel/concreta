@@ -15,7 +15,7 @@
         @endforeach
         <h3>{{ $atendimento->updated_at->format('d / m / Y - H:i') }}</h3>
         <x-jam-plus-rectangle-f class="appointment-icon" />
-        <p style="display: none;">{{ $atendimento->texto}}</p>
+        <p class="no-active-register-content">{{ $atendimento->texto}}</p>
     </li>
     @endforeach
 </ul>

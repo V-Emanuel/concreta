@@ -95,24 +95,22 @@
 
                     });
                 });
-            });
-
-            document.addEventListener('DOMContentLoaded', function () {
 
                 document.querySelectorAll('.appointment-icon').forEach(function (icon, index) {
                     icon.addEventListener('click', function () {
 
-                        var moreContent = document.getElementById('moreContent' + index);
+                        let moreContent = document.getElementById('moreContent' + index);
+                        moreContent.classList.add('expanded');
 
-                        moreContent.classList.toggle('expanded');
+                        let texto = moreContent.querySelector('p');
 
-                        var texto = moreContent.querySelector('p');
-                        texto.style.display = moreContent.classList.contains('expanded') ? 'block' : 'none';
+                        if (moreContent.classList.contains('expanded')) {
+                            texto.classList.toggle('active-register-content');
+                            texto.classList.toggle('no-active-register-content');
+                            moreContent.classList.remove('expanded');
+                        }
                     });
                 });
-            });
-
-            document.addEventListener('DOMContentLoaded', function () {
 
                 document.querySelectorAll('.checkbox-cidade').forEach(function (checkbox) {
                     checkbox.addEventListener('change', function () {
@@ -156,5 +154,6 @@
                     }
                 }
             });
+
         </script>
 </x-app-layout>

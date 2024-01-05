@@ -111,16 +111,16 @@
                 position: absolute;
                 top: 120px;
                 left: 0px;
-                z-index: 999;
+                z-index: 3;
                 box-sizing: border-box;
                 padding: 10px 10px 10px 10px;
-                border-top-right-radius: 30px;
-                border-bottom-left-radius: 30px;
-                border-bottom-right-radius: 30px;
-                background-color: aquamarine;
-                box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-                    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                border-top-right-radius: 20px;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                background: linear-gradient(180deg, #5c7ada, #1c407f);
+                color: #fff;
                 text-align: start;
+                transition: 1s;
             }
         }
     }
@@ -140,7 +140,7 @@
     position: fixed;
     right: 0px;
     background: linear-gradient(180deg, #5c7ada, #031636);
-    z-index: 2;
+    z-index: 6;
     transition: 1s;
     .form-title {
         margin-bottom: 30px;
@@ -169,7 +169,7 @@
 }
 
 .active-x {
-    transform: translateX(0);
+    transform: translateX(0%);
 }
 
 .active-opacity {
@@ -188,12 +188,23 @@
     transition: opacity 1s ease-out;
 }
 
+.active-register-content{
+
+    transform: scale(1) translate(0%, 0%);
+}
+
+.no-active-register-content{
+
+    transform: scale(0) translate(-100%, -100%);
+}
+
 .opacity-bg {
     width: 100vw;
     height: 100vh;
     position: fixed;
-    z-index: 1;
+    z-index: 5;
     background-color: rgba(0, 0, 0, 0.5);
+    transition: 1s;
 }
 
 .filter-column {
