@@ -3,6 +3,8 @@
     <div class="form-inputs-container">
         <label>Nome:<span style="color: red"> *</span></label>
         <input placeholder="Nome" name="nome" required type="text">
+        <label>Situação:<span style="color: red"> *</span></label>
+        <input placeholder="Situação" name="situacao" required type="text">
         <label>Naturalidade:<span style="color: red"> *</span></label>
         <select id="naturalidade" name="naturalidade" onchange="atualizarEstadoCivil(); ocultarCampoOutro()">
             <option id="brasileiro" value="brasileiro">brasileiro</option>
@@ -60,8 +62,7 @@
                 <h6>Cidade:<span style="color: red"> *</span></h6>
                 <input id="cidade" name="cidade" required type="text">
             </div>
-
-        </div>
+        </div>   
     </div>
 
 

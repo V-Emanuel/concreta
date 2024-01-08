@@ -13,6 +13,7 @@ return new class extends Migration {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
+            $table->string('situacao');
             $table->string('celular');
             $table->string('naturalidade');
             $table->string('estado_civil');
@@ -26,6 +27,7 @@ return new class extends Migration {
             $table->string('estado_nascimento');
             $table->json('endereco');
             $table->json('documentos');
+            $table->json('observacoes');
 
             $table->timestamps();
         });

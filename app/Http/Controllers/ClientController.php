@@ -31,6 +31,7 @@ class ClientController extends Controller
 
         $cliente = new Cliente([
             'nome' => $data['nome']  ?? 'null',
+            'situacao' => $data['situacao']  ?? 'null',
             'celular' => $data['celular']  ?? 'S/N',
             'naturalidade' => $data['naturalidade'] ?? 'null',
             'estado_civil' => $data['estado_civil'] ?? 'null',
@@ -44,6 +45,7 @@ class ClientController extends Controller
             'estado_nascimento' => $data['estado_nascimento'] ?? 'null',
             'endereco' =>  $endereco,
             'documentos' => [], 
+            'observacoes' => [], 
         ]);
 
         $cliente->save();

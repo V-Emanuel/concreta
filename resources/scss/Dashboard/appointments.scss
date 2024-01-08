@@ -124,7 +124,7 @@
                 transition: 1s;
             }
         }
-    }
+    }     
     ul::-webkit-scrollbar {
         width: 10px;
     }
@@ -189,13 +189,11 @@
     transition: opacity 1s ease-out;
 }
 
-.active-register-content{
-
+.active-register-content {
     transform: scale(1) translate(0%, 0%);
 }
 
-.no-active-register-content{
-
+.no-active-register-content {
     transform: scale(0) translate(-100%, -100%);
 }
 

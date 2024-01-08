@@ -11,6 +11,7 @@ class Cliente extends Model
 
     protected $fillable = [
         'nome',
+        'situacao',
         'celular',
         'naturalidade',
         'estado_civil',
@@ -24,10 +25,12 @@ class Cliente extends Model
         'estado_nascimento',
         'endereco',
         'documentos',
+        'observacoes'
     ];
 
     protected $casts = [
         'endereco' => 'json',
         'documentos' => 'json',
+        'observacoes' => 'json'
     ];
 }
