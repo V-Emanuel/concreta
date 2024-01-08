@@ -1,66 +1,69 @@
 <form class="create-cliente-component" id="cadastroForm" method="POST" action="{{ route('cliente.post') }}">
     @csrf
-    <label>Nome:<span style="color: red"> *</span></label>
-    <input placeholder="Nome" name="nome" required type="text">
-    <label>Naturalidade:<span style="color: red"> *</span></label>
-    <select id="naturalidade" name="naturalidade" onchange="atualizarEstadoCivil(); ocultarCampoOutro()">
-        <option id="brasileiro" value="brasileiro">brasileiro</option>
-        <option id="brasileira" value="brasileira">brasileira</option>
-        <option value="outro">Outro</option>
-    </select>
-    <div id="campoOutro" style="display: none;">
-        <label for="outro">Digite a opção:</label>
-        <input type="text" id="outro" name="naturalidade">
-    </div>
-    <label>Estado Civil:<span style="color: red"> *</span></label>
-    <select id="estado_civil" name="estado_civil">
-    </select>
-    <label>Profissão:<span style="color: red"> *</span></label>
-    <input placeholder="Profissão" name="profissao" required type="text">
-    <label>Nome da Mãe:<span style="color: red"> *</span></label>
-    <input placeholder="Mãe" name="nome_mae" required type="text">
-    <label>Nome do Pai: </label>
-    <input placeholder="Pai" name="nome_pai" required type="text">
-    <label>RG:<span style="color: red"> *</span></label>
-    <input placeholder="99.999.999-99" id="rg" name="rg" required type="text">
-    <label>CPF:<span style="color: red"> *</span></label>
-    <input placeholder="999.999.999-99" id="cpf" name="cpf" required type="text">
-    <label>Celular:</label>
-    <input type="text" id="celular" name="celular" placeholder="(99) 99999-9999">
-    <label>Cidade de Nascimento:<span style="color: red"> *</span></label>
-    <input placeholder="Cidade" name="cidade_nascimento" required type="text">
-    <label>Estado de Nascimento:<span style="color: red"> *</span></label>
-    <input placeholder="Estado" name="estado_nascimento" required type="text">
-    <label>Data de Nascimento:<span style="color: red"> *</span></label>
-    <input placeholder="99/99/9999" id="nascimento" name="nascimento" required type="text">
-    <label class="label-endereco">Endereço:<span style="color: red"> *</span></label>
-    <div class="cliente-endereco-container">
-        <div class="endereco-section primeiro">
-            <h6>CEP:<span style="color: red"> *</span></h6>
-            <input id="cep" placeholder="CEP" name="cep" required type="text">
+    <div class="form-inputs-container">
+        <label>Nome:<span style="color: red"> *</span></label>
+        <input placeholder="Nome" name="nome" required type="text">
+        <label>Naturalidade:<span style="color: red"> *</span></label>
+        <select id="naturalidade" name="naturalidade" onchange="atualizarEstadoCivil(); ocultarCampoOutro()">
+            <option id="brasileiro" value="brasileiro">brasileiro</option>
+            <option id="brasileira" value="brasileira">brasileira</option>
+            <option value="outro">Outro</option>
+        </select>
+        <div id="campoOutro" style="display: none;">
+            <label for="outro">Digite a opção:</label>
+            <input type="text" id="outroCampo" name="outroCampo">
         </div>
-        <div class="endereco-section segundo">
-            <h6>Rua:<span style="color: red"> *</span></h6>
-            <input id="logradouro" placeholder="Rua" name="rua" required type="text">
-        </div>
-        <div class="endereco-section terceiro">
-            <h6>Bairro:<span style="color: red"> *</span></h6>
-            <input id="bairro" name="bairro" required type="text">
-        </div>
-        <div class="endereco-section quarto">
-            <h6>Número:<span style="color: red"> *</span></h6>
-            <input id="numero" name="numero" required type="text">
-        </div>
-        <div class="endereco-section quinto">
-            <h6>Estado:<span style="color: red"> *</span></h6>
-            <input id="estado" name="estado" required type="text">
-        </div>
-        <div class="endereco-section sexto">
-            <h6>Cidade:<span style="color: red"> *</span></h6>
-            <input id="cidade" name="cidade" required type="text">
-        </div>
+        <label>Estado Civil:<span style="color: red"> *</span></label>
+        <select id="estado_civil" name="estado_civil">
+        </select>
+        <label>Profissão:<span style="color: red"> *</span></label>
+        <input placeholder="Profissão" name="profissao" required type="text">
+        <label>Nome da Mãe:<span style="color: red"> *</span></label>
+        <input placeholder="Mãe" name="nome_mae" required type="text">
+        <label>Nome do Pai: </label>
+        <input placeholder="Pai" name="nome_pai" required type="text">
+        <label>RG:<span style="color: red"> *</span></label>
+        <input placeholder="99.999.999-99" id="rg" name="rg" required type="text">
+        <label>CPF:<span style="color: red"> *</span></label>
+        <input placeholder="999.999.999-99" id="cpf" name="cpf" required type="text">
+        <label>Celular:</label>
+        <input type="text" id="celular" name="celular" placeholder="(99) 99999-9999">
+        <label>Cidade de Nascimento:<span style="color: red"> *</span></label>
+        <input placeholder="Cidade" name="cidade_nascimento" required type="text">
+        <label>Estado de Nascimento:<span style="color: red"> *</span></label>
+        <input placeholder="Estado" name="estado_nascimento" required type="text">
+        <label>Data de Nascimento:<span style="color: red"> *</span></label>
+        <input placeholder="99/99/9999" id="nascimento" name="nascimento" required type="text">
+        <label class="label-endereco">Endereço:<span style="color: red"> *</span></label>
+        <div class="cliente-endereco-container">
+            <div class="endereco-section primeiro">
+                <h6>CEP:<span style="color: red"> *</span></h6>
+                <input id="cep" placeholder="CEP" name="cep" required type="text">
+            </div>
+            <div class="endereco-section segundo">
+                <h6>Rua:<span style="color: red"> *</span></h6>
+                <input id="logradouro" placeholder="Rua" name="rua" required type="text">
+            </div>
+            <div class="endereco-section terceiro">
+                <h6>Bairro:<span style="color: red"> *</span></h6>
+                <input id="bairro" name="bairro" required type="text">
+            </div>
+            <div class="endereco-section quarto">
+                <h6>Número:<span style="color: red"> *</span></h6>
+                <input id="numero" name="numero" required type="text">
+            </div>
+            <div class="endereco-section quinto">
+                <h6>Estado:<span style="color: red"> *</span></h6>
+                <input id="estado" name="estado" required type="text">
+            </div>
+            <div class="endereco-section sexto">
+                <h6>Cidade:<span style="color: red"> *</span></h6>
+                <input id="cidade" name="cidade" required type="text">
+            </div>
 
+        </div>
     </div>
+
 
     <button type="submit" id="btnCadastrarCliente" onclick="exibirDados()">
         <p>CADASTRAR</p>
@@ -121,7 +124,7 @@
         campoOutro.style.display = select.value === 'outro' ? 'block' : 'none';
 
         if (select.value !== 'outro') {
-            document.getElementById('outro').value = '';
+            document.getElementById('outroCampo').value = '';
         }
     }
 
@@ -131,12 +134,11 @@
 
         if (select.value === 'brasileiro' || select.value === 'brasileira') {
             campoOutro.style.display = 'none';
-            document.getElementById('outro').value = '';
+            document.getElementById('outroCampo').value = '';
         } else {
             campoOutro.style.display = 'block';
         }
-    } 
-    atualizarEstadoCivil();
+    } atualizarEstadoCivil();
 
     $("#cep").focusout(function () {
         $.ajax({

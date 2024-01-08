@@ -15,33 +15,33 @@ class ClientController extends Controller
         foreach ($data as $chave => $valor) {
             if ($chave === 'naturalidade') {
                 if ($valor === 'outro' || $valor === '' || $valor === null) {
-                    unset($data[$chave]);
+                    $data['naturalidade'] = $data['outroCampo'];
                 }
             }
         }
 
         $endereco = [
-            'cep'=> $data['cep'] ?? 'joge',
-            'rua'=> $data['rua'],
-            'bairro'=> $data['bairro'] ?? 'joge',
-            'numero'=> $data['numero'] ?? 'joge',
-            'cidade'=> $data['cidade'] ?? 'joge',
-            'estado'=> $data['estado'] ?? 'joge' ,
+            'cep'=> $data['cep'] ?? 'null',
+            'rua'=> $data['rua'] ,
+            'bairro'=> $data['bairro'] ?? 'null',
+            'numero'=> $data['numero'] ?? 'null',
+            'cidade'=> $data['cidade'] ?? 'null',
+            'estado'=> $data['estado'] ?? 'null' ,
         ];
 
         $cliente = new Cliente([
-            'nome' => $data['nome'],
-            'celular' => $data['celular'],
-            'naturalidade' => $data['naturalidade'] ?? 'joge',
-            'estado_civil' => $data['estado_civil'],
-            'profissao' => $data['profissao'],
-            'nome_mae' => $data['nome_mae'],
-            'nome_pai' => $data['nome_pai'],
-            'rg' => $data['rg'],
-            'cpf' => $data['cpf'],
-            'nascimento' => $data['nascimento'],
-            'cidade_nascimento' => $data['cidade_nascimento'],
-            'estado_nascimento' => $data['estado_nascimento'],
+            'nome' => $data['nome']  ?? 'null',
+            'celular' => $data['celular']  ?? 'S/N',
+            'naturalidade' => $data['naturalidade'] ?? 'null',
+            'estado_civil' => $data['estado_civil'] ?? 'null',
+            'profissao' => $data['profissao'] ?? 'null',
+            'nome_mae' => $data['nome_mae'] ?? 'null',
+            'nome_pai' => $data['nome_pai'] ?? 'null',
+            'rg' => $data['rg'] ?? 'null',
+            'cpf' => $data['cpf'] ?? 'null',
+            'nascimento' => $data['nascimento'] ?? 'null',
+            'cidade_nascimento' => $data['cidade_nascimento'] ?? 'null',
+            'estado_nascimento' => $data['estado_nascimento'] ?? 'null',
             'endereco' =>  $endereco,
             'documentos' => [], 
         ]);

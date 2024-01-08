@@ -98,6 +98,7 @@
                 bottom: 7px;
                 width: 22px;
                 &:hover {
+                    transition: 0.5s;
                     cursor: pointer;
                 }
             }

@@ -1,7 +1,7 @@
 .clients-content {
     width: 100%;
     height: 100vh;
-    background-color: #e3e3e3;
+    background-color: #1d2125;
     display: flex;
     flex-direction: column;
     padding-top: 46px;
@@ -26,15 +26,21 @@
     width: 760px;
     height: 100%;
     box-sizing: border-box;
-    padding-top: 70px;
+    padding-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: fixed;
     right: 0px;
-    background-color: #fff;
+    background: linear-gradient(180deg, #0441ab, #00225D);
     z-index: 2;
     transition: 1s;
+
+    .form-title{
+        font-family: 'Metropolis-Black';
+        font-size: 36px;
+        color: #fff;
+    }
 }
 
 .close-client-icon {
@@ -43,6 +49,14 @@
     position: absolute;
     top: 20px;
     left: 20px;
+    &:hover{
+        transition: 0.5s;
+        cursor: pointer;
+        color: #9abaf1;
+    }
+    &:not(:hover){
+        transition: 0.5s;
+    }
 }
 
 .client-opacity-bg {
@@ -59,7 +73,7 @@
     height: 100%;
     box-sizing: border-box;
     padding-top: 40px;
-    background-color: aquamarine;
+    background-color: #1d2125;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -72,7 +86,8 @@
     background-color: burlywood;
     box-sizing: border-box;
     padding: 20px 20px 20px 20px;
-    display: flex;
+    // display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
 }
