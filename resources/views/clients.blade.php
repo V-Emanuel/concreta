@@ -46,7 +46,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="client-docs"></div>
+                <div class="client-docs">
+                    <h4>Documentos :</h4>
+                    <fonm class="add-document" method="POST" action="{{ route('cliente.post') }}">
+                        @csrf
+                        <label>Nome Do Arquivo:<span style="color: red"> *</span></label>
+                        <input placeholder="nome" name="nome" required type="text">
+                        <label>Descrição:<span style="color: red"> *</span></label>
+                        <input placeholder="Descrição" name="descricao" required type="text" class="doc-text">
+                        <x-gmdi-upload-file-tt  class="upload-doc"/>
+                        <button type="submit">
+                        </button>
+                    </fonm>
+                    <x-mdi-file-document-plus class="doc-icon" />
+                </div>
             </div>
             @endforeach
         </div>
@@ -119,7 +132,5 @@
             });
         });
     });
-
-
 
 </script>
